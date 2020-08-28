@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #c06701;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+}
+
+.container {
+    margin: auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+/* Main headings (App and Recipe names) */
+h1 {
+    font-size: 65px;
+}
+
+/* Ingredients heading */
+h2 {
+    font-size: 27px; 
+}
+
+/* h3 heading are not being edited here because their style doesn't need any change (they are the recipe names on the photos' hover */
+
+/* Search result text */
+h4 {
+    font-size: 25px;
+    color: #c5c4c4;
+}
+
+input,
+button {
+    border: 1px solid #dedede;
+    font-size: 16px;
+    padding: 14px 16px;
+}
+
+input {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 350px;
+}
+
+.search-btn {
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.random-btn {
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.meals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.meal {
+    cursor: pointer;
+    position: relative;
+    height: 180px;
+    width: 180px;
+    text-align: center;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.meal-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+}
+
+.meal:hover .meal-info {
+    opacity: 1;
+}
+
+.single-meal {
+    margin: 30px auto;
+    width: 75%;
+}
+
+.single-meal img {
+    width: 400px;
+    margin: 20px;
+    border-radius: 4px;
+}
+
+.single-meal-info {
+    margin: 20px;
+    padding: 10px;
+    border: 2px #4f351a dashed;
+    border-radius: 5px;
+}
+
+.single-meal p {
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+
+.single-meal ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.single-meal ul li {
+    background-color: #fff;
+    border: 1px solid #f8cd94;
+    border-radius: 5px;
+    color: #4f351a;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0 7px 7px 0;
+}
+
+@media(max-width: 800px) {
+    .meals {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 700px) {
+    .meals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meal {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media(max-width: 500px) {
+    input[type='text'] {
+        width: 100%;
+    }
+
+    .meals {
+        grid-template-columns: 1fr;
+    }
+
+    .meal {
+        height: 300px;
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    input {
+        width: 250px;
+    }
+}
